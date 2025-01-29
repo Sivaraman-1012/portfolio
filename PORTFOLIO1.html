@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivaraman S - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0f2f5;
+            color: #2d3436;
+            line-height: 1.7;
+        }
+
+        .main {
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: white;
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .name h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00ff87, #60efff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
+        }
+
+        .name h1:hover {
+            transform: translateX(10px);
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav_name {
+            color: white;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav_name::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #00ff87;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav_name:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .section {
+            margin: 3rem auto;
+            padding: 2.5rem;
+            max-width: 1000px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #004e92;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #00ff87, #60efff);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: white;
+        }
+
+        .experience-item {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-left: 4px solid #004e92;
+            background: #f8f9fa;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            background: #004e92;
+            color: white;
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 3rem auto;
+            max-width: 1000px;
+        }
+
+        .contact-item {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover img {
+            transform: rotate(360deg);
+        }
+
+        .contact-item p {
+            color: #2d3436;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .section {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+
+        }
+        .project-item {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1.5rem 0;
+        transition: transform 0.3s ease, background 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-item:hover {
+        transform: translateY(-5px);
+        background: linear-gradient(135deg, #000428, #004e92);
+        color: white;
+    }
+
+    .project-item h3 {
+        color: #004e92;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-item:hover h3 {
+        color: #00ff87;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="name">
+                <h1>Sivaraman S</h1>
+            </div>
+            <div class="nav">
+                <a class="nav_name" href="#about">About</a>
+                <a class="nav_name" href="#skills">Skills</a>
+                <a class="nav_name" href="#experience">Experience</a>
+                <a class="nav_name" href="#projects">Projects</a>
+                <a class="nav_name" href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="about">
+        <h2>About Me</h2>
+        <p>I'm an enthusiastic Electronics and Communication Engineering student with a keen interest in IoT, embedded systems, and innovative technological solutions. My journey has been fueled by a passion for learning and creating, leading to hands-on experience in developing impactful projects like the Solar Sun Tracker Using 8051 Microcontroller and contributing to insightful internships in the IoT domain.</p>
+        <p style="margin-top: 1rem">I thrive on challenges and enjoy presenting my ideas, as showcased during my participation in Engineering Day Project Presentations and a paper presentation at Sri Ramakrishna Institute of Technology. I aim to blend my technical skills with creativity to design solutions that bridge the gap between technology and real-world needs.</p>
+    </div>
+
+    <div class="section" id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <h3>Programming</h3>
+                <p>C, C++, Python, Java</p>
+            </div>
+            <div class="skill-item">
+                <h3>IoT</h3>
+                <p>Embedded Systems</p>
+            </div>
+            <div class="skill-item">
+                <h3>Microcontrollers</h3>
+                <p>8051, Raspberry Pi Pico, ESP32</p>
+            </div>
+            <div class="skill-item">
+                <h3>Tools</h3>
+                <p>Proteus, Arduino IDE</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="experience">
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <h3>Litz Tech India Pvt Ltd</h3>
+            <p>7 days Internship - Embedded Systems Domain</p>
+        </div>
+        <div class="experience-item">
+            <h3>Quantanics TechServ Pvt Ltd</h3>
+            <p>7 days Internship - IoT Domain</p>
+        </div>
+    </div>
+
+    <div class="section" id="projects">
+        <h2>Projects</h2>
+        <div class="project-item">
+            <h3>Line Follower Robot</h3>
+            <p>A robot designed to follow a predefined path using sensors and motor control.</p>
+        </div>
+        <div class="project-item">
+            <h3>Home Automation</h3>
+            <p>A smart home system that automates electrical appliances using IoT technology.</p>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <div class="contact-item">
+            <a href="mailto:72772euec188@gmail.com">
+                <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="Email">
+                <p style="color: black;">Email</p>
+            </a>
+        </div>
+        <div class="contact-item">
+            <a href="tel:+918667312449">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCj8gMJ5ZEYQpqf-L962BNFg9jya8ajQ0sg&s" alt="Mobile">
+                <p style="color: black;">Mobile</p>
+            </a>
+        </div>
+        <div class="contact-item">
+            <a href="https://www.instagram.com/___s.i.v.a_/">
+                <img src="https://1000logos.net/wp-content/uploads/2017/02/Emblem-Instagram.jpg" alt="Instagram">
+                <p>Instagram</p>
+            </a>
+        </div>
+        <div class="contact-item">
+            <a href="https://www.facebook.com/profile.php?id=100056789451954">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMVkVBBbiB0jLeop8Ojo4YCoD-BHXOqJ6jsQ&s" alt="Facebook">
+                <p>Facebook</p>
+            </a>
+        </div>
+        <div class="contact-item">
+            <a href="https://www.linkedin.com/in/sivaraman-s-697441290/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlyA7juENXGkALsSH13xrmGvs8Rhl6rOM_rw&s" alt="LinkedIn">
+                <p>LinkedIn</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
